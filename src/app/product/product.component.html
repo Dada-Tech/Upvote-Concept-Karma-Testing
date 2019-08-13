@@ -1,0 +1,27 @@
+<div class="card flex-row flex-wrap" *ngFor="let product of products | orderBy: order:true">
+  <div class="card-header border-0">
+    <div class="product-img-wrapper">
+      <img class="product-img" src="../../assets/{{product.productImageUrl}}" alt="product featured image">
+    </div>
+  </div>
+
+  <div class="card-custom-left card-block px-2">
+    <div class="card-title">
+      <span id="product-arrow-wrapper" (click)="upVote(product.id)">
+      <img class="product-arrow" src="../../assets/images/ui/arrow.png" alt="ui arrow">
+      </span>
+      <span class="product-votes">{{product.votes}}</span>
+    </div>
+
+    <div class="card-text">
+      <a href="{{product.url}}" class="product-title">{{product.title}}</a>
+      <div class="product-description">{{product.description}}</div>
+      <div class="card-custom-footer">
+        <div class="product-submit-by">Submitted By:</div>
+        <div class="product-avatar-wrapper">
+          <img class="product-avatar rounded-circle" src="../../assets/{{product.submitterAvatarUrl}}" alt="product avatar">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
